@@ -1,3 +1,13 @@
+class User:
+    """
+    Класс пользователя, содержащий атрибуты: логин, пароль
+    """
+    def __init__(self, username, password, password_confirm):
+        self.username = username
+        if password == password_confirm:
+            self.password = password
+            
+
 class Database:
     def __init__(self):
         self.data = {}
@@ -6,14 +16,4 @@ class Database:
 
 if __name__ == '__main__':
     database = Database()
-    user = User(input('Введите логин: '), input('Введите пароль'), input('Повторите пароль: '))
-
-class User:
-    """
-    Класс пользователя, содержащий атрибуты: логин, пароль
-    """
-
-    def __init__(self, username, password, password_confirm):
-        self.username = username
-        if password == password_confirm:
-            self.password = password
+    user = User(input('Введите логин: '), input('Введите пароль: '), input('Повторите пароль: '))
